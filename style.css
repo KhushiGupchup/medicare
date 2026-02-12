@@ -1,0 +1,391 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 22px;
+    color: #00c9a7;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin-left: 25px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+    color: #00c9a7;
+}
+
+/* Sections */
+.section {
+    display: none;
+    min-height: 100vh;
+    padding: 120px 20px 50px 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.section.active-section {
+    display: block;
+}
+
+.section-container {
+    max-width: 700px;
+    margin: auto;
+    color: white;
+    text-align: center;
+}
+
+.section-container h1,
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Support card */
+.support-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: white;
+    color: #203a43;
+    font-weight: bold;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 70px;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #00c9a7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #00a387;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 201, 167, 0.95);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.toast .checkmark {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Chatbot */
+.chatbot-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #00c9a7;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 26px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-popup {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 320px;
+    background: white;
+    color: #203a43;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.chatbot-popup.hidden {
+    display: none;
+}
+
+.chat-header {
+    background: #00c9a7;
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.chat-body {
+    padding: 15px;
+}
+
+.chat-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.chat-body li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-body li:hover {
+    background: #e0e0e0;
+}
+.hidden {
+    display: none;
+}
+/* Chatbot popup styling */
+.chatbot-popup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    font-family: 'Segoe UI', sans-serif;
+    color: #203a43;
+    z-index: 1000;
+}
+
+.chat-header {
+    background: #00c9a7;
+    color: white;
+    padding: 10px 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.chat-body {
+    padding: 10px 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.chat-body p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.chat-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chat-question {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-question:hover {
+    background: #00c9a7;
+    color: white;
+}
+
+.answer-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.answer-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00c9a7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.answer-buttons button:hover {
+    background: #008f7f;
+}
+
+/* Chatbot icon */
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00c9a7;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1001;
+}
+
+/* Responsive */
+@media(max-width:450px) {
+    .app-card {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}

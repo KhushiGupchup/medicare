@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CareConnect | Healthcare Support</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">CareConnect</div>
+    <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#support" class="nav-link">Support</a></li>
+    </ul>
+</nav>
+
+<!-- Sections -->
+<section id="home" class="section active-section">
+    <div class="section-container">
+        <h1>Welcome to CareConnect</h1>
+        <p>Your AI-powered healthcare support platform. Request help or volunteer to make a difference in your community.</p>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="section-container">
+        <h2>About CareConnect</h2>
+        <p>CareConnect connects patients in need with volunteers and provides AI assistance for healthcare queries.</p>
+    </div>
+</section>
+
+<section id="support" class="section">
+    <div class="support-container">
+
+        <div class="app-card">
+
+            <h1>CareConnect</h1>
+            <p class="subtitle">AI-Powered Healthcare Support</p>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" id="patientTab">Patient</button>
+                <button class="tab" id="volunteerTab">Volunteer</button>
+            </div>
+
+            <!-- Patient Form -->
+            <div id="patientFormSection">
+                <form id="patientForm">
+                    <input type="text" id="pname" placeholder="Full Name" required>
+                    <input type="text" id="pphone" placeholder="Phone Number" required>
+                    <input type="text" id="plocation" placeholder="Location" required>
+                    <textarea id="pissue" placeholder="Describe your health issue..." required></textarea>
+                    <select id="purgency">
+                        <option value="Low">Low Urgency</option>
+                        <option value="Medium">Medium Urgency</option>
+                        <option value="High">High Urgency</option>
+                    </select>
+                    <button type="submit" class="primary-btn">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Volunteer Form -->
+            <div id="volunteerFormSection" class="hidden">
+                <form id="volunteerForm">
+                    <input type="text" id="vname" placeholder="Full Name" required>
+                    <input type="text" id="vskills" placeholder="Medical Skills / Expertise" required>
+                    <input type="text" id="vavailability" placeholder="Availability" required>
+                    <input type="text" id="vcontact" placeholder="Contact Information" required>
+                    <button type="submit" class="primary-btn">Register</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast hidden">
+    <span class="checkmark">✔</span>
+    <span id="toastMessage"></span>
+</div>
+
+<!-- Chatbot -->
+<div class="chatbot-icon" id="chatbotIcon">💬</div>
+<div class="chatbot-popup hidden" id="chatbotPopup">
+    <div class="chat-header">
+        <h3>AI Assistant</h3>
+        <span id="closeChatbot" class="close-btn">&times;</span>
+    </div>
+    <div class="chat-body" id="chatBody">
+        <p>Select a question:</p>
+        <ul id="questionList">
+            <li class="chat-question">How do I request medical support?</li>
+            <li class="chat-question">How can I volunteer?</li>
+            <li class="chat-question">What is CareConnect?</li>
+        </ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
